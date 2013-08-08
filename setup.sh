@@ -46,3 +46,11 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+# setup terminal to be git-aware
+cd $HOME
+if [-d ./.bash/ ]; then
+    mv .bash .bash.old
+fi
+mkdir .bash
+cd .bash
+git clone https://github.com/elimence/git-aware-prompt.git
